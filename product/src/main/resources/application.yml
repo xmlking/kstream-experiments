@@ -1,0 +1,32 @@
+server:
+  port: ${PORT:8082}
+logging:
+  level:
+#    root: debug
+    org.apache.kafka.streams.processor.internals: WARN
+spring:
+  application:
+    name: klog-product
+
+spring.cloud.stream.bindings.output.contentType: application/json
+spring.cloud.stream.kstream.binder.configuration.commit.interval.ms: 1000
+spring.cloud.stream.kstream:
+  timeWindow.length: 5000
+  timeWindow.advanceBy: 0
+  binder.configuration:
+    key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+    value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+  bindings.output.producer:
+    keySerde: org.apache.kafka.common.serialization.Serdes$IntegerSerde
+spring.cloud.stream.bindings.output:
+  destination: product-counts
+  producer:
+    headerMode: raw
+    useNativeEncoding: true
+spring.cloud.stream.bindings.input:
+  destination: products
+  consumer:
+    headerMode: raw
+spring.cloud.stream.kstream.binder:
+  brokers: 127.0.0.1
+  zkNodes: 127.0.0.1
