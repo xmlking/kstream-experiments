@@ -31,8 +31,9 @@ dependencyManagement {
 
 dependencies {
     compile(project(":shared"))
-    compile("org.springframework.cloud:spring-cloud-stream-binder-kstream")
-    //testCompile("org.springframework.boot:spring-boot-starter-test")
+    // compile("org.springframework.cloud:spring-cloud-stream-binder-kstream") // use this for kafka 0.10.1.1
+    compile("org.springframework.cloud:spring-cloud-stream-binder-kstream11:1.3.0.RELEASE") // use this for kafka 0.11.0.0
+    // testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
 /**

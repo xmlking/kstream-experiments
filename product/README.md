@@ -22,10 +22,10 @@ gradle product:docker -x test
 ```bash
 # start kafka 1.0.0
 docker-compose up
-# or start kafka 0.10.1.1
-docker-compose -f docker-compose-10.yml up
+# or start kafka 0.11.0.0
+docker-compose -f docker-compose-11.yml up
 # stop and remove volumes
-docker-compose -f docker-compose-10.yml down -v
+docker-compose -f docker-compose-11.yml down -v
 ```
 
 #### start app
