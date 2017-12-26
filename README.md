@@ -6,15 +6,15 @@ Analyzer Kafka Streams App
 
 ### Test
 ```bash
-gradle analyzer:test
+gradle word-count:test
 ```
 ### Build
 ```bash
-gradle analyzer:build -x test 
+gradle word-count:build -x test 
 # continuous build with `-t`. 
-gradle -t analyzer:build
+gradle -t word-count:build
 # build docker image
-gradle analyzer:docker -x test 
+gradle word-count:docker -x test 
 ```
  
 ### Run
@@ -30,7 +30,7 @@ docker-compose -f docker-compose-11.yml down -v
 
 #### start app
 ```bash
-gradle analyzer:bootRun
+gradle word-count:bootRun
 ```
 
 ### ssh to kafka container
