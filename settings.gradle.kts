@@ -1,1 +1,1 @@
-include( "shared", "analyzer", "product")
+include( "shared", "word-count", "product")

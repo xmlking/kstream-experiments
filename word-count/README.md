@@ -1,36 +1,36 @@
-Analyzer
+WorkCount
 ========
-Analyzer Kafka Streams App
+WorkCount Kafka Streams App
 
 > use `./gradlew` instead of `gradle` if you didn't installed `gradle`
 
 ### Test
 ```bash
-gradle analyzer:test
+gradle word-count:test
 ```
 ### Build
 ```bash
-gradle analyzer:build -x test 
+gradle word-count:build -x test 
 # continuous build with `-t`. 
-gradle -t analyzer:build
+gradle -t word-count:build
 # build docker image
-gradle analyzer:docker -x test 
+gradle word-count:docker -x test 
 ```
  
 ### Run
 #### start kafka
 ```bash
-# start kafka 1.0.0
+# start kafka 0.11.0.0
 docker-compose up
-# or start kafka 0.11.0.0
-docker-compose -f docker-compose-11.yml up
+# or start kafka 1.0.0
+docker-compose -f docker-compose-k1.yml up
 # stop and remove volumes
-docker-compose -f docker-compose-11.yml down -v
+docker-compose down -v
 ```
 
 #### start app
 ```bash
-gradle analyzer:bootRun
+gradle word-count:bootRun
 ```
 
 ### ssh to kafka container

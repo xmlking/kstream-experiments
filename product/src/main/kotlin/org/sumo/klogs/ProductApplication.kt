@@ -20,10 +20,10 @@ import org.springframework.boot.SpringApplication
 
 @SpringBootApplication
 @EnableBinding(KStreamProcessor::class)
-class KlogsApplication
+class ProductApplication
 
 fun main(args: Array<String>) {
-    SpringApplication.run(KlogsApplication::class.java, *args)
+    SpringApplication.run(ProductApplication::class.java, *args)
 }
 
 @Configuration

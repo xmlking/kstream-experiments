@@ -4,6 +4,9 @@ logging:
   level:
 #    root: debug
     org.apache.kafka.streams.processor.internals: WARN
+spring:
+  application:
+    name: work-count
 
 spring.cloud.stream.kstream:
   timeWindow.length: 5000
@@ -22,7 +25,7 @@ spring.cloud.stream.bindings.output:
 
 spring.cloud.stream.bindings.input:
   destination: words
-#  group: myGroup
+#  group: work-count
   consumer:
     headerMode: raw
 #    startOffset: earliest

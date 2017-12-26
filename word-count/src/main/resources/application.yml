@@ -6,7 +6,7 @@ logging:
     org.apache.kafka.streams.processor.internals: WARN
 spring:
   application:
-    name: klog-analyzer
+    name: work-count
 
 spring.cloud.stream.kstream:
   timeWindow.length: 5000
@@ -25,7 +25,7 @@ spring.cloud.stream.bindings.output:
 
 spring.cloud.stream.bindings.input:
   destination: words
-#  group: klogAnalyzer
+#  group: work-count
   consumer:
     headerMode: raw
 #    startOffset: earliest
@@ -34,7 +34,7 @@ spring.cloud.stream.kstream.binder:
   brokers: 127.0.0.1
   zkNodes: 127.0.0.1
   configuration:
-#    client.id: klog-analyzer
+#    client.id: work-count
     commit.interval.ms: 1000
     key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
     value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde

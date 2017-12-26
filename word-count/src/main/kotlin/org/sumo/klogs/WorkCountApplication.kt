@@ -16,14 +16,14 @@ import java.util.*
 
 @SpringBootApplication
 @EnableBinding(KStreamProcessor::class)
-class KlogsApplication
+class WorkCountApplication
 
 fun main(args: Array<String>) {
-    SpringApplication.run(KlogsApplication::class.java, *args)
+    SpringApplication.run(WorkCountApplication::class.java, *args)
 }
 
 @Configuration
-class LogProcessor(val timeWindows: TimeWindows) {
+class WorkCountProcessor(val timeWindows: TimeWindows) {
     private val storeName = "for-WordCounts"
 
 //    @Autowired

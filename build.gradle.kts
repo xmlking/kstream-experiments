@@ -45,6 +45,7 @@ subprojects {
         compile("org.springframework.boot:spring-boot-starter-web")
         compile("com.fasterxml.jackson.module:jackson-module-kotlin")
         compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
+        testCompile("org.springframework.boot:spring-boot-starter-test")
     }
 
     tasks {
