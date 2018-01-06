@@ -1,15 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.SpringBootPluginExtension
 
-val kafkaVersion by project
-val jacksonVersion by project
-
 plugins {
     val kotlinVersion = "1.1.61"
     val springDependencyManagement = "1.0.4.RELEASE"
     val springBootVersion = "1.5.9.RELEASE"
     val junitGradleVersion = "1.0.2"
     val dockerPluginVersion = "0.17.2"
+    val propdepsVersion = "0.0.9.RELEASE"
 
     base
     id("org.jetbrains.kotlin.jvm") version kotlinVersion
@@ -46,6 +44,7 @@ subprojects {
         compile("com.fasterxml.jackson.module:jackson-module-kotlin")
         compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
         testCompile("org.springframework.boot:spring-boot-starter-test")
+        compileOnly("org.springframework.boot:spring-boot-configuration-processor")
     }
 
     tasks {

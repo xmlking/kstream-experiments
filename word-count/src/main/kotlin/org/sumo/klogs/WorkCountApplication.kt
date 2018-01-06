@@ -26,9 +26,6 @@ fun main(args: Array<String>) {
 class WorkCountProcessor(val timeWindows: TimeWindows) {
     private val storeName = "for-WordCounts"
 
-//    @Autowired
-//    private lateinit var timeWindows: TimeWindows
-
     //@StreamListener("input", condition = "headers['type']=='foo'")
     @StreamListener("input")
     @SendTo("output")

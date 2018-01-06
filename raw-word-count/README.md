@@ -1,28 +1,28 @@
-WorkCount
-========
-WorkCount Kafka Streams App
+Raw-Word-Count
+==============
+Raw Word-Count Kafka Streams App
 
 > use `./gradlew` instead of `gradle` if you didn't installed `gradle`
 
 ### Test
 ```bash
-gradle word-count:test
+gradle raw-word-count:test
 ```
 ### Build
 ```bash
-gradle word-count:build -x test 
+gradle raw-word-count:build -x test 
 # continuous build with `-t`. 
-gradle -t word-count:build
+gradle -t raw-word-count:build
 # build docker image
-gradle word-count:docker -x test 
+gradle raw-word-count:docker -x test 
 ```
-
+ 
  ### Deploy
- > Deploying to production.
-```bash
-nohup java -jar -Dspring.profiles.active=prod word-count-0.1.0-SNAPSHOT.jar > word-count.log 2>&1 & 
-```
-
+ > Deploying to production.  
+ ```bash
+ nohup java -jar -Dspring.profiles.active=prod raw-word-count-0.1.0-SNAPSHOT.jar > raw-word-count.log 2>&1 & 
+ ```
+ 
 ### Run
 > run locally
 #### start kafka
@@ -35,13 +35,11 @@ docker-compose -f docker-compose-local.yml down -v
 
 #### start app
 ```bash
-gradle word-count:bootRun
+gradle raw-word-count:bootRun
 # run with `prod` profile.
-SPRING_PROFILES_ACTIVE=prod gradle word-count:bootRun
+SPRING_PROFILES_ACTIVE=prod gradle raw-word-count:bootRun
 # fource to enable debug logs
-SPRING_PROFILES_ACTIVE=prod gradle word-count:bootRun --debug
-# via docker
-docker-compose up word-count
+SPRING_PROFILES_ACTIVE=prod gradle raw-word-count:bootRun --debug
 ```
 
 ### ssh to kafka container
@@ -52,7 +50,7 @@ docker-compose exec kafka bash
 
 ### receive messages
 ```bash
-kafka-console-consumer --bootstrap-server kafka:9092 --from-beginning --property print.key=true --topic counts
+kafka-console-consumer --bootstrap-server kafka:9092 --from-beginning --property print.key=true --topic counts 
 ```
 
 ### send messages

@@ -3,8 +3,6 @@ import org.gradle.jvm.tasks.Jar
 import org.springframework.boot.gradle.SpringBootPluginExtension
 
 val kafkaVersion by project
-val springCloudStreamVersion by project
-val springCloudStreaKafkaVersion by project
 
 apply {
     plugin("com.palantir.docker")
@@ -24,19 +22,10 @@ docker {
     dependsOn(tasks.findByName("build"))
 }
 
-dependencyManagement {
-    imports {
-        mavenBom("org.springframework.cloud:spring-cloud-stream-dependencies:$springCloudStreamVersion")
-    }
-}
-
 dependencies {
     compile(project(":shared"))
-    compile("org.springframework.cloud:spring-cloud-stream-binder-kstream11:$springCloudStreaKafkaVersion")
-    // add these for kafka 1.0.0
+    compile("org.springframework.kafka:spring-kafka")
     compile("org.apache.kafka:kafka-streams:$kafkaVersion")
-    compile("org.apache.kafka:kafka_2.12:$kafkaVersion")
-    compile("org.apache.kafka:kafka_2.11:$kafkaVersion")
 }
 
 /**

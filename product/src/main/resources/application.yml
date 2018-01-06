@@ -3,7 +3,9 @@ server:
 logging:
   level:
 #    root: debug
+#    org.sumo.klogs: DEBUG
     org.apache.kafka.streams.processor.internals: WARN
+
 spring:
   application:
     name: klog-product

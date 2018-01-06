@@ -16,16 +16,21 @@ gradle -t product:build
 # build docker image
 gradle product:docker -x test 
 ```
- 
+
+ ### Deploy
+ > Deploying to production.
+```bash
+nohup java -jar -Dspring.profiles.active=prod product-0.1.0-SNAPSHOT.jar > product.log 2>&1 & 
+```
+
 ### Run
+> run locally
 #### start kafka
 ```bash
-# start kafka 1.0.0
-docker-compose up
-# or start kafka 0.11.0.0
-docker-compose -f docker-compose-11.yml up
+docker-compose up kafka
+docker-compose -f docker-compose-local.yml up
 # stop and remove volumes
-docker-compose -f docker-compose-11.yml down -v
+docker-compose -f docker-compose-local.yml down -v
 ```
 
 #### start app
@@ -37,16 +42,6 @@ gradle product:bootRun
 ```bash
 docker-compose exec kafka bash
 # then you can run following commands in this shell
-```
-
-### list topics
-```bash
-kafka-topics --zookeeper zookeeper:2181 --list
-```
-
-### to delete topics
-```bash
-kafka-topics --zookeeper localhost:2181 --delete --topic default-for-ProductCounts-changelog
 ```
 
 ### receive messages
