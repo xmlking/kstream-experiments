@@ -1,6 +1,5 @@
 import com.palantir.gradle.docker.DockerExtension
 import org.gradle.jvm.tasks.Jar
-import org.springframework.boot.gradle.SpringBootPluginExtension
 
 val kafkaVersion by project
 
