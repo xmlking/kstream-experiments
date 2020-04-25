@@ -6,6 +6,8 @@ A set of `data microservices` for analysing applogs using `Kafka Streams`
 
 > use `./gradlew` instead of `gradle` if you didn't installed `gradle`
 
+> **todo** ***[try kotlin avro serializer: avro4k-kafka-serializer](https://github.com/thake/avro4k-kafka-serializer)***
+
 ### Test
 ```bash
 gradle word-count:test
